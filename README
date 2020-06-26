@@ -1,0 +1,3 @@
+1. Install the node_modules using command npm -i
+2. To start the server use the command 'node app.js'
+3. Enter to localhost:3000

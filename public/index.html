@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="display-3 text-center mb-5">WebRTC Training</h1>
+        <div id="selectRoom">
+            <label for="roomName">Type room name:</label>
+            <input type="text" name="" id="roomName">
+            <button id="goRoom">Go</button>
+        </div>
+        
+        <div class="row text-center" id="consultingRoom" style="display: none">
+            <h1 class="display5 col-12" id="callName"></h1>
+            <video class="col-5" id="localVideo" autoplay></video>
+            <video class="col-5" id="remoteVideo" autoplay></video>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
