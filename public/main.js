@@ -132,6 +132,10 @@ const handleOffer = withRoomCheck(({sdp}) => {
 });
 
 const handleAnswer = withRoomCheck(({sdp}) => {
+  if (!isCaller) {
+    console.warn('not a caller, nothing to do on \'answer\'');
+    return;
+  }
   console.log('Received answer', sdp);
   rtcPeerConnection.setRemoteDescription(new RTCSessionDescription(sdp));
 });
@@ -140,6 +144,7 @@ const handleCandidate = withRoomCheck(event => {
   const candidate = new RTCIceCandidate(
       {
         sdpMLineIndex: event.label,
+        sdpMid: event.sdpMid,
         candidate: event.candidate
       });
   console.log('Received candidate', candidate);
