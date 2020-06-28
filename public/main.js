@@ -64,7 +64,7 @@ const handleJoined = withRoomCheck(() => {
       .then(stream => {
         localStream = stream;
         localVideo.srcObject = stream;
-        sendMessage('ready', roomName)
+        sendMessage('ready', {room: roomName})
       })
       .catch(err => {
         console.log('An error occurred', err)
